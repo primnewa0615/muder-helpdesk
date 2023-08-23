@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.helpdesk-register {
+  display: flex;
+  height: 100vh;
+  text-align: center;
+}
+
+.regist-left-side {
+  width: 50%;
+  background-image: url('../../assets/img/img-1.jpg');
+  background-repeat: no-repeat;
+  align-items: center;
+  object-fit: cover;
+  background-size: 100% 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.regist-left-side h2 {
+  font-size: 60px;
+}
+
+.regist-right-side {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #cee6f3;
+}
+
+.regist-right-side p {
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+.regist-input {
+  width: 380px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+
+.btn-register {
+  width: 400px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #8be8e5;
+  text-align: center;
+}
+
+.fgs-logo {
+  border-radius: 20px;
+  opacity: 0.5;
+}

@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Navbar */
+.nav-help {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #fff;
+  color: #000;
+}
+
+.nav-help ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-help li a {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #000;
+  font-size: 17px;
+}
+
+/* Dashboard */
+.dashboard-helpdesk {
+  background-color: #8be8e5;
+  height: 80vh;
+  padding: 0 100px;
+}
+
+.dashboard-helpdesk h2 {
+  padding: 30px 20px;
+}
+.dashboard-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-count {
+  width: 250px;
+  height: 100px;
+  background-color: white;
+  margin: 0 20px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dashboard-list-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-list-head p {
+  padding: 30px 20px;
+}
+
+.dashboard-list-table {
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.dashboard-list-table th {
+  width: 300px;
+}
+
+.footer-helpdesk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: #fff;
+  color: #000;
+}
