@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from '../components/Navbar';
 import '../assets/css/style.css';
-import Dashboard from './Dashboard';
-import Footer from './Footer';
+import Dashboard from '../components/Dashboard';
+import Footer from '../components/Footer';
 
 function App() {
   return (

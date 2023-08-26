@@ -3,8 +3,8 @@ import React from 'react';
 function Navbar() {
   return (
     <div className="navbar-helpdesk">
+      <h3>FGS Infotama</h3>
       <nav className="nav-help">
-        <h3>FGS|Helpdesk</h3>
         <ul>
           <li>
             <a href="#a">My Tickets</a>
@@ -19,8 +19,8 @@ function Navbar() {
             <a href="#a">Notification</a>
           </li>
         </ul>
-        <h3>User</h3>
       </nav>
+      <h3>User</h3>
     </div>
   );
 }

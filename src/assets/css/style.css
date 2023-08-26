@@ -3,14 +3,24 @@
   margin: 0;
 }
 
+:root {
+  --primary-color: #ecf2ff;
+}
+
+/* app */
+.helpdesk-app {
+  background-color: var(--primary-color);
+  height: 100vh;
+}
+
 /* Navbar */
-.nav-help {
+.navbar-helpdesk {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
 }
 
 .nav-help ul {
@@ -21,13 +31,12 @@
 .nav-help li a {
   text-decoration: none;
   padding: 0 10px;
-  color: #000;
+  color: #fff;
   font-size: 17px;
 }
 
 /* Dashboard */
 .dashboard-helpdesk {
-  background-color: #8be8e5;
   height: 80vh;
   padding: 0 100px;
 }
@@ -52,6 +61,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 2px 2px 2px 2px #000;
+}
+
+.dashboard-count span {
+  font-size: 30px;
 }
 
 .dashboard-list-head {
@@ -67,6 +81,7 @@
   background-color: #fff;
   border-radius: 5px;
   margin: 0 20px;
+  box-shadow: 2px 2px 2px 2px #000;
 }
 
 .dashboard-list-table th {
@@ -78,6 +93,151 @@
   justify-content: center;
   align-items: center;
   padding: 20px 30px;
-  background-color: #fff;
+  /* background-color: #fff; */
   color: #000;
+}
+
+/* Ticket */
+.my-ticket {
+  background-color: var(--primary-color);
+}
+
+.ticket-helpdesk {
+  height: 80vh;
+  padding: 0 200px;
+}
+
+.ticket-helpdesk-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.ticket-helpdesk-main {
+  width: 970px;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.ticket-helpdesk-box {
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.ticket-helpdesk-main h4 {
+  display: flex;
+  flex: 1;
+}
+
+.btn-ticket-helpdesk {
+  border: 1px solid grey;
+  background-color: var(--primary-color);
+  border-radius: 50px;
+  width: 100px;
+}
+
+.ticket-helpdesk-main select {
+  width: 50px;
+}
+
+.ticket-helpdesk-main-search {
+  margin-right: 50px;
+}
+
+.ticket-helpdesk-main-table th {
+  width: 500px;
+}
+
+.ticket-helpdesk-main-table {
+  padding: 0 20px;
+}
+
+.ticket-helpdesk-main-tablebox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ticket-helpdesk-main-table-hr {
+  size: 10px;
+  width: 95%;
+}
+
+.ticket-helpdesk-footer {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: auto auto;
+  gap: 620px;
+  padding: 10px 0;
+}
+
+.right button {
+  background-color: #fff;
+  border-radius: 2px;
+  border: 1px solid grey;
+}
+
+button.middle {
+  width: 30px;
+  background-color: #279eff;
+}
+
+.first {
+  width: 60px;
+}
+
+.header-modal {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  padding: 20px 0;
+}
+
+.header-modal h3 {
+  color: #000 !important;
+}
+
+.header-modal button {
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+}
+
+.modal-input {
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+}
+
+.modal-option,
+.modal-textarea {
+  width: 500px;
+  border: 1px solid var(--primary-color);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-ccl {
+  border: 1px solid var(--primary-color);
+  background-color: red;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 3px;
+  width: 60px;
+}
+
+.modal-submit {
+  border: 1px solid var(--primary-color);
+  background-color: blue;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 3px;
+  width: 60px;
 }

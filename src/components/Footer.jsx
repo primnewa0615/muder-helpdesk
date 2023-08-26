@@ -3,7 +3,7 @@ import React from 'react';
 function Footer() {
   return (
     <div className="footer-helpdesk">
-      <h3>Helpdesk Ticketing System &copy; Muhammaddery</h3>
+      <h4>Helpdesk Ticketing System &copy; Muhammaddery</h4>
     </div>
   );
 }

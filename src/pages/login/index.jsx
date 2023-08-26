@@ -1,12 +1,8 @@
 import React from 'react';
 import './style.css';
-import { useNavigate } from 'react-router-dom';
+import fgslogo from '../../assets/img/fgs-logo.jpeg';
 
 function Login() {
-  const navigate = useNavigate();
-  function handleClick() {
-    navigate('/register');
-  }
   return (
     <div className="helpdesk-login">
       <div className="lgn-left-side">
@@ -17,9 +13,11 @@ function Login() {
         </p>
       </div>
       <div className="lgn-right-side">
-        <h1>Helpdesk Ticketing System</h1>
-        <p>Signing to your account</p>
-
+        <div className="lgn-right-side-head">
+          <img src={fgslogo} alt="fgs" className="fgs" />
+          <h1>Helpdesk Ticketing System</h1>
+          <p>Signing to your account</p>
+        </div>
         <form>
           <input
             type="text"
@@ -41,11 +39,10 @@ function Login() {
           <br />
           <br />
           <p>
-            Don't have account? please{' '}
-            <span className="regist-p" onClick={handleClick}>
-              {' '}
-              register
-            </span>
+            Having trouble logging in? contact us{' '}
+            <a href="admin" className="anchor">
+              admin@fgsinfotama.com
+            </a>
           </p>
         </form>
       </div>
