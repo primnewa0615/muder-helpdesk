@@ -67,7 +67,8 @@ function Ticket() {
       formData
     ])
 
-    console.log(formData);
+    setFormData({});
+    setIsOpen(false);
   }
 
 
@@ -167,6 +168,7 @@ function Ticket() {
                 <th>Action</th>
               </tr>
             </thead>
+            
             <tbody className="ticket-table-body">
               {tickets.length > 0 && tickets.map((item) => (
                 <tr key={item.id}>
