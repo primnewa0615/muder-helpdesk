@@ -1,8 +1,7 @@
 import React from 'react';
+import { TicketData } from '../utils/data';
 
 function Dashboard() {
-
-  
   return (
     <div className="dashboard-helpdesk">
       <h2>Dashboard</h2>
@@ -32,12 +31,24 @@ function Dashboard() {
         </div>
         <div className="dashboard-list-table">
           <table>
-            <tr>
-              <th>ID Ticket</th>
-              <th>Title</th>
-              <th>Status</th>
-              <th>Created At</th>
-            </tr>
+            <thead className="dashboard-list-table-header">
+              <tr>
+                <th className="id-ticket">ID Ticket</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Created At</th>
+              </tr>
+            </thead>
+            <tbody className="dashboard-list-table-body">
+              {TicketData.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.questions}</td>
+                  <td>{item.status}</td>
+                  <td>{item.createdat}</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
       </div>

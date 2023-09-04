@@ -82,10 +82,31 @@
   border-radius: 5px;
   margin: 0 20px;
   box-shadow: 2px 2px 2px 2px #000;
+  text-align: center;
 }
 
 .dashboard-list-table th {
   width: 300px;
+}
+
+.dashboard-list-table-header th {
+  padding: 10px 10px;
+  border-left: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  background: #000;
+  color: #fff;
+}
+
+.id-ticket {
+  width: 20px;
+}
+
+.dashboard-list-table-body td {
+  padding: 10px 10px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  background: -moz-linear-gradient(top, #fbfbfb, #fafafa);
 }
 
 .footer-helpdesk {
@@ -103,7 +124,8 @@
 }
 
 .ticket-helpdesk {
-  height: 80vh;
+  height: 100vh;
+  width: 70%;
   padding: 0 200px;
 }
 
@@ -114,16 +136,16 @@
 }
 
 .ticket-helpdesk-main {
-  width: 970px;
+  /* width: 970px; */
   color: black;
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px;
+  padding: 20px;
 }
 
 .ticket-helpdesk-box {
   background-color: #fff;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 .ticket-helpdesk-main h4 {
@@ -142,12 +164,12 @@
   width: 50px;
 }
 
-.ticket-helpdesk-main-search {
-  margin-right: 50px;
-}
-
 .ticket-helpdesk-main-table th {
   width: 500px;
+}
+
+.ticket-helpdesk-main-table td {
+  font-size: 14px;
 }
 
 .ticket-helpdesk-main-table {
@@ -166,12 +188,20 @@
   width: 95%;
 }
 
-.ticket-helpdesk-footer {
+/* .ticket-helpdesk-footer {
   display: grid;
   justify-content: space-between;
   grid-template-columns: auto auto;
   gap: 620px;
   padding: 10px 0;
+} */
+
+.ticket-helpdesk-footer {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+  padding: 10px 0;
+  flex-wrap: wrap;
 }
 
 .right button {
@@ -240,4 +270,17 @@ button.middle {
   margin: 0 5px;
   padding: 3px;
   width: 60px;
+}
+
+.ticket-table-body {
+  text-align: center;
+}
+
+.ticket-table-body button {
+  border: none;
+  border-radius: 5px;
+}
+.submit-detailticket {
+  width: 15px;
+  height: 10px;
 }

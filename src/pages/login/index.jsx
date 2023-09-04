@@ -1,8 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import fgslogo from '../../assets/img/fgs-logo.jpeg';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate();
+  //menyimpan pesan error
+  const [errorMessages, setErrorMessages] = useState({});
+  //menyimpan login berhasil
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  //database
+  const usersData = [
+    {
+      email: 'muhammaddery65@gmail.com',
+      password: '123456',
+    },
+    {
+      email: 'fajar@gmail.com',
+      password: '123456',
+    },
+  ];
+
+  // error message
+  const errors = {
+    email: 'Invalid email or password',
+  };
+
+  //submit
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    //email and passwd from doc forms
+    let { email, password } = document.forms[0];
+
+    const userLogin = usersData.find(
+      (user) => user.email === email.value && user.password === password.value
+    );
+
+    // console.log(userLogin);
+
+    if (userLogin) {
+      setIsSubmitted(true);
+      navigate('/app');
+    } else {
+      setErrorMessages({ name: 'email', message: errors.email });
+    }
+  };
+
   return (
     <div className="helpdesk-login">
       <div className="lgn-left-side">
@@ -18,24 +63,35 @@ function Login() {
           <h1>Helpdesk Ticketing System</h1>
           <p>Signing to your account</p>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
+          <div className={isSubmitted ? 'hide' : 'showError'}>
+            {errorMessages.message}
+          </div>
+
           <input
             type="text"
             name="email"
             placeholder="Email"
             className="lgn-input"
+            required
           />
           <br />
           <br />
+          <div className={isSubmitted ? 'hide' : 'showError'}>
+            {errorMessages.message}
+          </div>
           <input
             type="password"
             name="password"
             placeholder="Password"
             className="lgn-input"
+            required
           />
           <br />
           <br />
           <button className="btn-login">Login</button>
+          {isSubmitted}
+
           <br />
           <br />
           <p>

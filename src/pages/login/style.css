@@ -79,3 +79,14 @@
   text-decoration: none;
   list-style-type: none;
 }
+
+.hide {
+  display: none;
+}
+
+.showError {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  color: red;
+}
