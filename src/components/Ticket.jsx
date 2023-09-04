@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Modal from 'react-modal';
 import { TicketData } from '../utils/data';
 import eye from '../assets/img/eye.png';
+import moment from 'moment/moment';
 
 const customStyles = {
   content: {
@@ -20,7 +21,22 @@ Modal.setAppElement('#root');
 function Ticket() {
   // modal
   let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [tickets, setTickets] = useState([]);
+  const [formData, setFormData] = useState({})
+
+  useEffect(() => {
+    setTickets(TicketData);
+  }, [])
+  
+  const handleInput = (e) =>{
+    setFormData({...formData, 
+       [e.target.id]: e.target.value
+    })
+
+    console.log(formData);
+   
+  }
 
   function openModal() {
     setIsOpen(true);
@@ -35,6 +51,26 @@ function Ticket() {
     setIsOpen(false);
   }
 
+  const addData = (form) =>{
+    let id= "00000"+ (tickets.length +1);
+    let date = new Date();
+    let today= moment().format("YYYY-MM-DD HH:mm:ss");
+    setFormData({
+      ...formData,
+      createdat: today,
+      status: "waiting",
+      id: id
+    });
+
+    setTickets([
+      ...tickets,
+      formData
+    ])
+
+    console.log(formData);
+  }
+
+
   return (
     <div className="ticket-helpdesk">
       <div className="ticket-helpdesk-header">
@@ -44,8 +80,7 @@ function Ticket() {
         </button>
         <Modal
           isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
+        
           style={customStyles}
           contentLabel="Example Modal"
         >
@@ -56,17 +91,18 @@ function Ticket() {
           <hr />
           <br />
           <div>
-            <form>
+          
               <label htmlFor="Upload Image">Upload Image</label>
 
               <div className="modal-input">
-                <input type="file" name="ticket-file" />
+                <input type="file" id='ticket-file' onChange={(e) => handleInput(e)} name="ticket-file" />
                 <br />
               </div>
               <br />
               <label htmlFor="Division">Division</label>
               <br />
-              <select name="division" className="modal-option">
+              <select name="division" id='divisions' onChange={(e) => handleInput(e)} className="modal-option">
+                <option value="">-- Choose Division</option>
                 <option value="IT Support">IT Support</option>
                 <option value="Programmer">Programmer</option>
                 <option value="Infra">Infra</option>
@@ -75,27 +111,30 @@ function Ticket() {
               <br />
               <label htmlFor="Question">Question</label>
               <br />
-              <input type="text" className="modal-option" />
+              <input type="text" id='questions' onKeyUp={(e) => handleInput(e)} className="modal-option" />
               <br />
               <br />
               <label htmlFor="Detail Question">Detail Question</label>
               <br />
               <textarea
                 name="detailquestion"
-                id=""
+                id="detailquestion"
+                onKeyUp={(e) => handleInput(e)}
                 cols="30"
                 rows="5"
                 className="modal-textarea"
               ></textarea>
-            </form>
-            <hr />
-            <br />
+               <hr />
+              <br />
+              
+          
             <div className="modal-footer">
-              <button className="modal-ccl" onClick={closeModal}>
-                Cancel
-              </button>
-              <button className="modal-submit">Submit</button>
-            </div>
+                <button className="modal-ccl" onClick={()=>closeModal()}>
+                  Cancel
+                </button>
+                <button type="submit" onClick={(e) => addData(e)} form='formtes'  className="modal-submit">Submit</button>
+              </div>
+           
           </div>
         </Modal>
       </div>
@@ -129,7 +168,7 @@ function Ticket() {
               </tr>
             </thead>
             <tbody className="ticket-table-body">
-              {TicketData.map((item) => (
+              {tickets.length > 0 && tickets.map((item) => (
                 <tr key={item.id}>
                   <td>{item.id}</td>
                   <td>{item.questions}</td>
